@@ -10,9 +10,9 @@ public class MobileApp {
 		
 
 		// mobile models
-		/* LGQ6, Redmi4, SonyXperiaXZ, motog5s, Nokia6 */
+		/* lgq6, redmi4, sonyxperia, motog5s, nokia6 */
 
-		Mobile mobile = (Mobile) context.getBean("motog5s");
+		Mobile mobile = (Mobile) context.getBean("sonyxperia");
 
 		mobile.switchOnTheMobile();
 	}

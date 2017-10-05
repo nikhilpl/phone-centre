@@ -8,10 +8,40 @@
                            http://www.springframework.org/schema/context/spring-context-3.0.xsd
                            http://www.springframework.org/schema/mvc
                            http://www.springframework.org/schema/mvc/spring-mvc-3.0.xsd">
-                           
-<!-- Mobile Dependencies  -->    
-<bean id="motog5s" class="com.infocampus.mobilecentre.learn.spring.mobileapp.v4_XmlCnfg.MotoG5S">
 
+	<!-- MusicPlayer Dependencies -->
+	<bean id="googleplay"
+		class="com.infocampus.mobilecentre.learn.spring.mobileapp.v4_XmlCnfg.GooglePlayMusic"></bean>
+
+	<bean id="walkman"
+		class="com.infocampus.mobilecentre.learn.spring.mobileapp.v4_XmlCnfg.Walkman"></bean>
+<bean id="jbl" class="com.infocampus.mobilecentre.learn.spring.mobileapp.v4_XmlCnfg.JBLPlayer"></bean>
+
+<bean id="jetaudio" class="com.infocampus.mobilecentre.learn.spring.mobileapp.v4_XmlCnfg.JetAudio"></bean>
+	<!-- Mobile Dependencies -->
+	<bean id="motog5s"
+		class="com.infocampus.mobilecentre.learn.spring.mobileapp.v4_XmlCnfg.MotoG5S">
+
+	</bean>
+	<bean id="nokia6"
+		class="com.infocampus.mobilecentre.learn.spring.mobileapp.v4_XmlCnfg.Nokia6">
+		<constructor-arg ref="googleplay"></constructor-arg>
+	</bean>
+	<bean id="lgq6" class="com.infocampus.mobilecentre.learn.spring.mobileapp.v4_XmlCnfg.LGQ6">
+	<constructor-arg value="1" type="int"></constructor-arg>
+	<constructor-arg value="Orange" type="String"></constructor-arg>
+	<constructor-arg><ref bean="walkman"/></constructor-arg>
+	</bean>
+	
+	<bean id="redmi4" class="com.infocampus.mobilecentre.learn.spring.mobileapp.v4_XmlCnfg.Redmi4">
+	<property name="player_version"><value>3</value></property>
+	<property name="player_color"><value>blue</value></property>
+	<property name="player" ref="jbl"></property>
+	</bean>
+
+<bean id="sonyxperia" class="com.infocampus.mobilecentre.learn.spring.mobileapp.v4_XmlCnfg.SonyXperiaXZ">
+<property name="mplayer_version"><value>2</value></property>
+	<property name="mplayer_color"><value>black</value></property>
+	<constructor-arg ><ref bean="jetaudio"/></constructor-arg>
 </bean>
-                       
 </beans>
